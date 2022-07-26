@@ -1,5 +1,7 @@
 # alephium-rpi
 
+[Alephium](https://alephium.org/) is the first live Layer 1 sharded blockchain scaling and improving on Bitcoin core technologies, Proof of Work & UTXO. It delivers a highly performant, secure DeFi & Dapps platform with enhanced energy efficiency.
+
 This repo is primarily intended for developers running headless Raspberry Pi's (no desktop environment) who want to use the various blockchain services for Alephium. With that said, individuals on the desktop version can still follow this guide by executing the same commands in their Pi terminal window.
 
 ## [Alephium Node](https://github.com/alephium/alephium)
@@ -70,7 +72,7 @@ OpenAPI is used to interact with the full node and the UI can be accessed via `h
 
 ### Node sync status
 
-```curl
+```bash
  curl -X 'GET' \
   'http://<RPI-IP-ADDRESS>:12973/infos/self-clique' \
   -H 'accept: application/json' \
@@ -81,7 +83,7 @@ OpenAPI is used to interact with the full node and the UI can be accessed via `h
 
 A new wallet will be created and respond with a mnemonic. Make sure to keep that mnemonic safely as it allows you to recover your wallet!
 
-```curl
+```bash
 curl -X 'POST' \
   'http://<RPI-IP-ADDRESS>:12973/wallets' \
   -H 'accept: application/json' \
@@ -95,7 +97,7 @@ curl -X 'POST' \
 
 ### Restore wallet
 
-```curl
+```bash
 curl -X 'PUT' \
   'http://<RPI-IP-ADDRESS>:12973/wallets' \
   -H 'accept: application/json' \
@@ -110,7 +112,7 @@ curl -X 'PUT' \
 
 ### Unlock wallet
 
-```curl
+```bash
 curl -X 'POST' \
   'http://<RPI-IP-ADDRESS>:12973/wallets/wallet-super-name/unlock' \
   -H 'accept: */*' \
@@ -123,12 +125,10 @@ curl -X 'POST' \
 
 ### Get wallet balance
 
-```curl
+```bash
 curl -X 'GET' \
   'http://<RPI-IP-ADDRESS>:12973/wallets/alpheiumnode/balances' \
   -H 'accept: application/json' \
   -H 'X-API-KEY: <API-SECRET-KEY>'
 ```
-
-
 
