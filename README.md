@@ -114,7 +114,7 @@ curl -X 'PUT' \
 
 ```bash
 curl -X 'POST' \
-  'http://<RPI-IP-ADDRESS>:12973/wallets/wallet-super-name/unlock' \
+  'http://<RPI-IP-ADDRESS>:12973/wallets/<AWESOME-WALLET-NAME>/unlock' \
   -H 'accept: */*' \
   -H 'X-API-KEY: <API-SECRET-KEY>' \
   -H 'Content-Type: application/json' \
@@ -125,10 +125,15 @@ curl -X 'POST' \
 
 ### Get wallet balance
 
+> Note: unlock the wallet first before executing this API call.
+
 ```bash
 curl -X 'GET' \
-  'http://<RPI-IP-ADDRESS>:12973/wallets/alpheiumnode/balances' \
+  'http://<RPI-IP-ADDRESS>:12973/wallets/<AWESOME-WALLET-NAME>/balances' \
   -H 'accept: application/json' \
   -H 'X-API-KEY: <API-SECRET-KEY>'
 ```
+
+
+
 
