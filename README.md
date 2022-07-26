@@ -66,11 +66,11 @@ Save the file with `CTRL + X` then `Y` and `ENTER` to confirm.
 
 This step is required for the settings to take effect.
 
-## Swagger 
+### Swagger API
 
-OpenAPI is used to interact with the full node and the UI can be accessed via `http://<RPI-IP-ADDRESS>:12973/docs` (default is `127.0.0.1`). However, below are a few commands that may be helpful to get you up and running.
+The UI for the Swagger docs can be accessed via `http://<RPI-IP-ADDRESS>:12973/docs` (default `127.0.0.1`). However, below are a few commands that may be helpful to get you up and running.
 
-### Node sync status
+#### Node sync status
 
 ```bash
  curl -X 'GET' \
@@ -79,7 +79,7 @@ OpenAPI is used to interact with the full node and the UI can be accessed via `h
   -H 'X-API-KEY: <API-SECRET-KEY>'
  ```
 
-### Create a new wallet
+#### Create a new wallet
 
 A new wallet will be created and respond with a mnemonic. Make sure to keep that mnemonic safely as it allows you to recover your wallet!
 
@@ -95,7 +95,7 @@ curl -X 'POST' \
 }'
 ```
 
-### Restore wallet
+#### Restore wallet
 
 ```bash
 curl -X 'PUT' \
@@ -110,7 +110,7 @@ curl -X 'PUT' \
 }'
 ```
 
-### Unlock wallet
+#### Unlock wallet
 
 ```bash
 curl -X 'POST' \
@@ -123,7 +123,7 @@ curl -X 'POST' \
 }'
 ```
 
-### Get wallet balance
+#### Get wallet balance
 
 > Note: unlock the wallet first before executing this API call.
 
